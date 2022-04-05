@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D370AEB127FC078100C6BBB2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D370AEB027FC078100C6BBB2 /* main.m */; };
+		D370AEBA27FC082B00C6BBB2 /* ExtendedAudioFileConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = D370AEB927FC082B00C6BBB2 /* ExtendedAudioFileConverter.m */; };
+		D38F9FFC27FE85B800FAE904 /* DDP.c in Sources */ = {isa = PBXBuildFile; fileRef = D38F9FFB27FE85B800FAE904 /* DDP.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +25,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D370AEAD27FC078100C6BBB2 /* ac3extract */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ac3extract; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3014AF127FC65AC00551AF9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D36DFA1F27FC3573005CDCE9 /* af2wav.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = af2wav.entitlements; sourceTree = "<group>"; };
+		D370AEAD27FC078100C6BBB2 /* af2wav */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = af2wav; sourceTree = BUILT_PRODUCTS_DIR; };
 		D370AEB027FC078100C6BBB2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D370AEB727FC082300C6BBB2 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
+		D370AEB827FC082300C6BBB2 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		D370AEB927FC082B00C6BBB2 /* ExtendedAudioFileConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendedAudioFileConverter.m; sourceTree = "<group>"; };
+		D370AEBB27FC085200C6BBB2 /* ExtendedAudioFileConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendedAudioFileConverter.h; sourceTree = "<group>"; };
+		D38F9FFA27FE85B800FAE904 /* DDP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDP.h; sourceTree = "<group>"; };
+		D38F9FFB27FE85B800FAE904 /* DDP.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = DDP.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +51,9 @@
 		D370AEA427FC078000C6BBB2 = {
 			isa = PBXGroup;
 			children = (
-				D370AEAF27FC078100C6BBB2 /* ac3extract */,
+				D370AEB827FC082300C6BBB2 /* LICENSE.txt */,
+				D370AEB727FC082300C6BBB2 /* ReadMe.md */,
+				D370AEAF27FC078100C6BBB2 /* af2wav */,
 				D370AEAE27FC078100C6BBB2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,25 +61,31 @@
 		D370AEAE27FC078100C6BBB2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D370AEAD27FC078100C6BBB2 /* ac3extract */,
+				D370AEAD27FC078100C6BBB2 /* af2wav */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D370AEAF27FC078100C6BBB2 /* ac3extract */ = {
+		D370AEAF27FC078100C6BBB2 /* af2wav */ = {
 			isa = PBXGroup;
 			children = (
+				D36DFA1F27FC3573005CDCE9 /* af2wav.entitlements */,
 				D370AEB027FC078100C6BBB2 /* main.m */,
+				D370AEB927FC082B00C6BBB2 /* ExtendedAudioFileConverter.m */,
+				D370AEBB27FC085200C6BBB2 /* ExtendedAudioFileConverter.h */,
+				D3014AF127FC65AC00551AF9 /* Info.plist */,
+				D38F9FFA27FE85B800FAE904 /* DDP.h */,
+				D38F9FFB27FE85B800FAE904 /* DDP.c */,
 			);
-			path = ac3extract;
+			path = af2wav;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D370AEAC27FC078100C6BBB2 /* ac3extract */ = {
+		D370AEAC27FC078100C6BBB2 /* af2wav */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D370AEB427FC078100C6BBB2 /* Build configuration list for PBXNativeTarget "ac3extract" */;
+			buildConfigurationList = D370AEB427FC078100C6BBB2 /* Build configuration list for PBXNativeTarget "af2wav" */;
 			buildPhases = (
 				D370AEA927FC078100C6BBB2 /* Sources */,
 				D370AEAA27FC078100C6BBB2 /* Frameworks */,
@@ -77,9 +95,9 @@
 			);
 			dependencies = (
 			);
-			name = ac3extract;
-			productName = ac3extract;
-			productReference = D370AEAD27FC078100C6BBB2 /* ac3extract */;
+			name = af2wav;
+			productName = af2wav;
+			productReference = D370AEAD27FC078100C6BBB2 /* af2wav */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -96,7 +114,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D370AEA827FC078000C6BBB2 /* Build configuration list for PBXProject "ac3extract" */;
+			buildConfigurationList = D370AEA827FC078000C6BBB2 /* Build configuration list for PBXProject "af2wav" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -109,7 +127,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D370AEAC27FC078100C6BBB2 /* ac3extract */,
+				D370AEAC27FC078100C6BBB2 /* af2wav */,
 			);
 		};
 /* End PBXProject section */
@@ -119,7 +137,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D38F9FFC27FE85B800FAE904 /* DDP.c in Sources */,
 				D370AEB127FC078100C6BBB2 /* main.m in Sources */,
+				D370AEBA27FC082B00C6BBB2 /* ExtendedAudioFileConverter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,7 +200,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 11.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -240,27 +260,41 @@
 		D370AEB527FC078100C6BBB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = af2wav/af2wav.entitlements;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
 				DEVELOPMENT_TEAM = T53Q9CN4T9;
 				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/af2wav/Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.padl.af2wav;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		D370AEB627FC078100C6BBB2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = af2wav/af2wav.entitlements;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
 				DEVELOPMENT_TEAM = T53Q9CN4T9;
 				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/af2wav/Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.padl.af2wav;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D370AEA827FC078000C6BBB2 /* Build configuration list for PBXProject "ac3extract" */ = {
+		D370AEA827FC078000C6BBB2 /* Build configuration list for PBXProject "af2wav" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D370AEB227FC078100C6BBB2 /* Debug */,
@@ -269,7 +303,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D370AEB427FC078100C6BBB2 /* Build configuration list for PBXNativeTarget "ac3extract" */ = {
+		D370AEB427FC078100C6BBB2 /* Build configuration list for PBXNativeTarget "af2wav" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D370AEB527FC078100C6BBB2 /* Debug */,
