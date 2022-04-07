@@ -54,7 +54,6 @@ int main(int argc, const char * argv[]) {
 
         NSURL *sourceURL = [NSURL fileURLWithPath:[NSString stringWithCString:argv[1] encoding:NSUTF8StringEncoding]];
         NSURL *destinationURL;
-        NSError *error;
         
         if (argc < 3) {
             destinationURL = [[sourceURL URLByDeletingPathExtension] URLByAppendingPathExtension:@"wav"];
