@@ -1,0 +1,141 @@
+#!/usr/bin/perl
+
+#ident $Id: checkpoint,v 1.5 1999/04/05 01:38:26 lukeh Exp $
+#ident $Apple: checkpoint,v 1.8 1996/06/27 04:15:35 rhagy Exp $
+
+$infoFile = "CVSVersionInfo.txt";
+$branchOpt = "";
+$checkpoint = "checkpoint";
+
+if ($ARGV[0] eq "-create")
+{
+	$InitialVersion = ($#ARGV > 0) ? $ARGV[1] : "1";
+
+	$defName = `basename \`pwd\``;
+	chop($defName);
+	$whoAmi = `whoami`;
+	chop($whoAmi);
+	print "Enter Project Name: [$defName] ";
+	$ProjName = <STDIN>;
+	chop($ProjName);
+	if (!$ProjName) { $ProjName = $defName; }
+	print "Creating Version File\n";
+	unlink($infoFile);
+	open(INFOFILE, ">$infoFile") || die "could not create $infoFile";
+	print INFOFILE '# Created and modified by checkpoint; do not edit', "\n";
+	print INFOFILE '# $Id: checkpoint,v 1.5 1999/04/05 01:38:26 lukeh Exp $', "\n";
+	print INFOFILE '# $Name:  $', "\n";
+	print INFOFILE "ProjectName: $ProjName\n";
+	print INFOFILE "ProjectVersion: $InitialVersion\n";
+	print INFOFILE "ProjectMaintainer: $whoAmi\n";
+	close(INFOFILE);
+	print "git add $infoFile\n";
+	system("git add $infoFile");
+	print "git commit -m \"Created Version File\" $infoFile\n";
+	system("git commit -m \"Created Version File\" $infoFile");
+	exit(0);
+}
+elsif ($ARGV[0] eq "-branch")
+{
+	$branch = 1;
+	shift @ARGV;
+}
+elsif ($ARGV[0] eq "-version")
+{
+	$newVers = $ARGV[1];
+	shift @ARGV;
+	shift @ARGV;
+}
+
+if ($#ARGV >= 0)
+{
+	print "Usage: $checkpoint -create [version] | -branch | -version [version]\n";
+	exit(0);
+}
+
+if (-w $infoFile == 0)
+{
+	print "$checkpoint: can't find or don't have write access to $infoFile\n";
+	print "use $checkpoint -create to create it\n";
+	exit(1);
+}
+
+print "Running 'git pull' to make sure that your work area is in sync with the Repository\n";
+
+system("git pull");
+system("git status");
+
+print "\nIs everything OK? <y/n>[y] ";
+$ans = <STDIN>;
+chop($ans);
+
+if (($ans eq "n") || ($ans eq "no") || ($ans eq "N") || ($ans eq "No"))
+{
+	print "Please fix the problems and then run $checkpoint again.\n";
+	exit(1);
+}
+
+open(INFOFILE, $infoFile) || die "could not open $infoFile";
+while(<INFOFILE>)
+{
+	if (/^#/) { next; }
+	local ($key, $value) = split(/:\s+/);
+	chop($value);
+	if ($key eq "ProjectVersion")
+	{
+		$vers = $value;
+	}
+	elsif ($key eq "ProjectName")
+	{
+		$name = $value;
+	}
+}
+close(INFOFILE);
+
+print "\nProject \"$name\" is currently at version: $vers\n";
+if (!defined($newVers))
+{
+	print "Enter new version number: ";
+	$newVers = <STDIN>;
+	chop($newVers);
+}
+
+if (!$newVers)
+{
+	local(@components) = split(/\./, $vers);
+	@components[$#components] += 1;
+	$newVers = join('.', @components);
+	print "Using new version $newVers\n";
+}
+
+print "Comments for this checkpoint: ";
+$comments = <STDIN>;
+chop($comments);
+open(INFOFILE, $infoFile) || die "could not open $infoFile";
+open(INFOFILE2, ">.$infoFile") || die "could not open .$infoFile for writing";
+while(<INFOFILE>)
+{
+	s/ProjectVersion:.*/ProjectVersion: $newVers/g;
+	print INFOFILE2 $_;
+}
+close(INFOFILE2);
+close(INFOFILE);
+
+rename(".$infoFile", $infoFile) || die "could not rename .$infoFile to $infoFile";
+
+$tagValue = "$name-$newVers";
+
+if ($branch) {
+	print "\nBranching with: git checkout -b \"$tagValue\"\n";
+	system("git checkout -b '$tagValue'");
+}
+
+print "git commit -m \"Checkpointed: $comments\" $infoFile\n";
+system("git commit -m \"Checkpointed: $comments\" $infoFile");
+system("git push");
+
+if ($branch == 0) {
+	print "\nCheckpointing with: git tag \"$tagValue\"\n";
+	system("git tag -a '$tagValue' -m '$comments'");
+	system("git push --tags");
+}
