@@ -16,6 +16,8 @@
     
     if ([input isKindOfClass:NSArray.class]) {
         for (id itemPath in input) {
+            __block NSError *error = nil;
+            
             if (![itemPath isKindOfClass:NSString.class]) {
                 continue;
             }
@@ -28,8 +30,8 @@
             ExtendedAudioFileConverter *converter = [[ExtendedAudioFileConverter alloc]
                                                      initWithSourceURL:itemPath destinationURL:destinationURL];
 
-            converter.completionHandler = ^(NSError *error) {
-                *pError = error;
+            converter.completionHandler = ^(NSError *e) {
+                error = e;
                 dispatch_group_leave(group);
             };
             
@@ -37,7 +39,7 @@
             [converter convertAudioFile];
             dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
             
-            if (*pError != nil)
+            if ((*pError = error) != nil)
                 break;
         }
     }
