@@ -14,7 +14,7 @@
 		</array>
 	</dict>
 	<key>AMApplication</key>
-	<string>(* Primary Application used by this action goes here. *)</string>
+	<string>Automator</string>
 	<key>AMCanShowSelectedItemsWhenRun</key>
 	<false/>
 	<key>AMCanShowWhenRun</key>
@@ -36,13 +36,13 @@
 		<key>AMDRelatedActions</key>
 		<string>(* AMDRelatedActions bundle ids go here. (optional) *)</string>
 		<key>AMDRequires</key>
-		<string>(* AMDRequires text to explain anything outside of Automator required for the action's operation, e.g. a web page open in Safari, goes here. (optional) *)</string>
+		<string>(* AMDRequires text to explain anything outside of Automator required for the action&apos;s operation, e.g. a web page open in Safari, goes here. (optional) *)</string>
 		<key>AMDResult</key>
 		<string>(* AMDResult text to further explain the types provided as output goes here. (optional) *)</string>
 		<key>AMDSummary</key>
-		<string>(* AMDSummary text to explain what your action does goes here. *)</string>
+		<string>Converts an audio file to a 32-bit floating point WAV file</string>
 		<key>AMDWebsite</key>
-		<string>(* AMDWebsite URL to additional information or documentation for the action goes here. (optional) *)</string>
+		<string>www.lukktone.com</string>
 	</dict>
 	<key>AMIconName</key>
 	<string>(* The name of the icon *)</string>
@@ -68,7 +68,7 @@
 		<key>ApplyButton</key>
 		<string>(* Button label for user to add proposed Action, e.g. Add. *)</string>
 		<key>IgnoreButton</key>
-		<string>(* Button label for user not to add proposed Action, e.g. Don't Add. *)</string>
+		<string>(* Button label for user not to add proposed Action, e.g. Don&apos;t Add. *)</string>
 		<key>Level</key>
 		<integer>0</integer>
 		<key>Message</key>
