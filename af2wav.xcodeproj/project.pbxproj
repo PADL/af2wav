@@ -180,6 +180,7 @@
 			buildConfigurationList = D370AEB427FC078100C6BBB2 /* Build configuration list for PBXNativeTarget "af2wav" */;
 			buildPhases = (
 				D370AEA927FC078100C6BBB2 /* Sources */,
+				D3C83B8527FFE0440063E772 /* Sync Version Numbers */,
 				D370AEAA27FC078100C6BBB2 /* Frameworks */,
 				D370AEAB27FC078100C6BBB2 /* CopyFiles */,
 			);
@@ -215,6 +216,7 @@
 			buildConfigurationList = D38A7BEA27FFBEFB00C6BB91 /* Build configuration list for PBXNativeTarget "AudioFile2Wav" */;
 			buildPhases = (
 				D38A7BD927FFBEFB00C6BB91 /* Sources */,
+				D3C83B8627FFE0890063E772 /* Sync Version Numbers */,
 				D38A7BDA27FFBEFB00C6BB91 /* Frameworks */,
 				D38A7BDB27FFBEFB00C6BB91 /* Resources */,
 				D38A7BDC27FFBEFB00C6BB91 /* ShellScript */,
@@ -297,7 +299,43 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "amlint \"${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}\"";
+			shellScript = "amlint \"${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}\"\n";
+		};
+		D3C83B8527FFE0440063E772 /* Sync Version Numbers */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Sync Version Numbers";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$($SRCROOT/BuildTools/vers_string -n | /usr/bin/sed -e 's/-.*//')\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"\nexit 0\n";
+		};
+		D3C83B8627FFE0890063E772 /* Sync Version Numbers */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Sync Version Numbers";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$($SRCROOT/BuildTools/vers_string -n | /usr/bin/sed -e 's/-.*//')\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"\nexit 0\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
