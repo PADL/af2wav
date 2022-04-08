@@ -16,17 +16,14 @@
     
     if ([input isKindOfClass:NSArray.class]) {
         for (id itemPath in input) {
-            __block NSError *error = nil;
-            
             if (![itemPath isKindOfClass:NSString.class]) {
                 continue;
             }
             
+            __block NSError *error = nil;
+            dispatch_group_t group = dispatch_group_create();
             NSURL *sourceURL = [NSURL fileURLWithPath:itemPath];
             NSURL *destinationURL = [[sourceURL URLByDeletingPathExtension] URLByAppendingPathExtension:@"wav"];
-
-            dispatch_group_t group = dispatch_group_create();
-
             ExtendedAudioFileConverter *converter = [[ExtendedAudioFileConverter alloc]
                                                      initWithSourceURL:itemPath destinationURL:destinationURL];
 
