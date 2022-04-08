@@ -34,18 +34,12 @@
 @import Foundation;
 @import AudioToolbox;
 
-#import "DDP.h"
 #import "ExtendedAudioFileConverter.h"
 
 #define PBSTR "||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"
 #define PBWIDTH 60
 
 int main(int argc, const char * argv[]) {
-    if (!RegisterDDPComponent()) {
-        fprintf(stderr, "Failed to register ec+3 codec\n");
-        exit(2);
-    }
-
     @autoreleasepool {
         if (argc < 2) {
             fprintf(stderr, "Usage: %s infile.m4a [outfile.wav|caf]\n", argv[0]);

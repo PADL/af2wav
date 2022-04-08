@@ -40,6 +40,7 @@
  */
 
 #import "ExtendedAudioFileConverter.h"
+#import "DDP.h"
 
 @import Darwin;
 @import AVFoundation;
@@ -50,6 +51,10 @@
     UInt8 *_magic;
     UInt32 _magicSize;
     double _lastPercentComplete;
+}
+
++ (void)initialize {
+    RegisterDDPComponent();
 }
 
 - (void)dealloc {
