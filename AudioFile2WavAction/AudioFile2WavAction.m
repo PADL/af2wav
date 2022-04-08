@@ -29,12 +29,12 @@
                                                      initWithSourceURL:itemPath destinationURL:destinationURL];
 
             converter.completionHandler = ^(NSError *error) {
-                *pError = error;                
+                *pError = error;
                 dispatch_group_leave(group);
             };
             
+            dispatch_group_enter(group);
             [converter convertAudioFile];
-            
             dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
             
             if (*pError != nil)
