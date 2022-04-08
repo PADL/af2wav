@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="AudioFile2WavAction">
+        <customObject id="-2" userLabel="File's Owner" customClass="AudioFile2Wav">
             <connections>
                 <outlet property="view" destination="47Y-Ci-255" id="jdu-ND-x6j"/>
             </connections>

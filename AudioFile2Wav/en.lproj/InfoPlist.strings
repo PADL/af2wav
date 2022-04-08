@@ -4,7 +4,7 @@
 /* AMCategory localized strings */
 /* e.g. "Text" = "Text"; */
 
-AMName = "AudioFile2WavAction";
+AMName = "AudioFile2Wav";
 
 /* AMDefaultParameters localized values */
 /* e.g. myDefaultIntegerParameter = 0; */

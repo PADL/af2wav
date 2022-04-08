@@ -49,7 +49,7 @@
 	<key>AMKeywords</key>
 	<array/>
 	<key>AMName</key>
-	<string>AudioFile2WavAction</string>
+	<string>AudioFile2Wav</string>
 	<key>AMProvides</key>
 	<dict>
 		<key>Container</key>

@@ -1,16 +1,16 @@
 //
-//  AudioFile2WavAction.m
-//  AudioFile2WavAction
+//  AudioFile2Wav.m
+//  AudioFile2Wav
 //
 //  Created by Luke Howard on 8/4/22.
 //
 
-#import "AudioFile2WavAction.h"
+#import "AudioFile2Wav.h"
 #import "ExtendedAudioFileConverter.h"
 
-@implementation AudioFile2WavAction
+@implementation AudioFile2Wav
 
-- (id)runWithInput:(id)input error:(NSError * _Nullable *)pError
+- (id)runWithInput:(id)input error:(NSError **)pError
 {
     *pError = nil;
     
