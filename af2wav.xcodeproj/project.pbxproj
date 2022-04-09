@@ -13,11 +13,11 @@
 		D38A7BD227FFBCE100C6BB91 /* DDP.c in Sources */ = {isa = PBXBuildFile; fileRef = D38F9FFB27FE85B800FAE904 /* DDP.c */; };
 		D38A7BD327FFBCE100C6BB91 /* ExtendedAudioFileConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = D370AEBB27FC085200C6BBB2 /* ExtendedAudioFileConverter.h */; };
 		D38A7BD427FFBCE100C6BB91 /* DDP.h in Headers */ = {isa = PBXBuildFile; fileRef = D38F9FFA27FE85B800FAE904 /* DDP.h */; };
-		D38A7BD627FFBD1900C6BB91 /* libExtenderAudioFileConverter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D38A7BC827FFBCD000C6BB91 /* libExtenderAudioFileConverter.a */; };
+		D38A7BD627FFBD1900C6BB91 /* libExtendedAudioFileConverter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D38A7BC827FFBCD000C6BB91 /* libExtendedAudioFileConverter.a */; };
 		D38A7BE227FFBEFB00C6BB91 /* AudioFile2Wav.m in Sources */ = {isa = PBXBuildFile; fileRef = D38A7BE127FFBEFB00C6BB91 /* AudioFile2Wav.m */; };
 		D38A7BE527FFBEFB00C6BB91 /* main.xib in Resources */ = {isa = PBXBuildFile; fileRef = D38A7BE327FFBEFB00C6BB91 /* main.xib */; };
 		D38A7BE927FFBEFB00C6BB91 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D38A7BE727FFBEFB00C6BB91 /* InfoPlist.strings */; };
-		D38A7BEF27FFBF0D00C6BB91 /* libExtenderAudioFileConverter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D38A7BC827FFBCD000C6BB91 /* libExtenderAudioFileConverter.a */; };
+		D38A7BEF27FFBF0D00C6BB91 /* libExtendedAudioFileConverter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D38A7BC827FFBCD000C6BB91 /* libExtendedAudioFileConverter.a */; };
 		D38F9FFC27FE85B800FAE904 /* DDP.c in Sources */ = {isa = PBXBuildFile; fileRef = D38F9FFB27FE85B800FAE904 /* DDP.c */; };
 /* End PBXBuildFile section */
 
@@ -27,14 +27,14 @@
 			containerPortal = D370AEA527FC078000C6BBB2 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = D38A7BC727FFBCD000C6BB91;
-			remoteInfo = ExtenderAudioFileConverter;
+			remoteInfo = ExtendedAudioFileConverter;
 		};
 		D38A7BED27FFBF0700C6BB91 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D370AEA527FC078000C6BBB2 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = D38A7BC727FFBCD000C6BB91;
-			remoteInfo = ExtenderAudioFileConverter;
+			remoteInfo = ExtendedAudioFileConverter;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -59,7 +59,7 @@
 		D370AEB827FC082300C6BBB2 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		D370AEB927FC082B00C6BBB2 /* ExtendedAudioFileConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendedAudioFileConverter.m; sourceTree = "<group>"; };
 		D370AEBB27FC085200C6BBB2 /* ExtendedAudioFileConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendedAudioFileConverter.h; sourceTree = "<group>"; };
-		D38A7BC827FFBCD000C6BB91 /* libExtenderAudioFileConverter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libExtenderAudioFileConverter.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D38A7BC827FFBCD000C6BB91 /* libExtendedAudioFileConverter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libExtendedAudioFileConverter.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D38A7BDE27FFBEFB00C6BB91 /* AudioFile2Wav.action */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudioFile2Wav.action; sourceTree = BUILT_PRODUCTS_DIR; };
 		D38A7BE027FFBEFB00C6BB91 /* AudioFile2Wav.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioFile2Wav.h; sourceTree = "<group>"; };
 		D38A7BE127FFBEFB00C6BB91 /* AudioFile2Wav.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioFile2Wav.m; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D38A7BD627FFBD1900C6BB91 /* libExtenderAudioFileConverter.a in Frameworks */,
+				D38A7BD627FFBD1900C6BB91 /* libExtendedAudioFileConverter.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D38A7BEF27FFBF0D00C6BB91 /* libExtenderAudioFileConverter.a in Frameworks */,
+				D38A7BEF27FFBF0D00C6BB91 /* libExtendedAudioFileConverter.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +103,7 @@
 				D370AEB827FC082300C6BBB2 /* LICENSE.txt */,
 				D370AEB727FC082300C6BBB2 /* ReadMe.md */,
 				D370AEAF27FC078100C6BBB2 /* af2wav */,
-				D38A7BC927FFBCD000C6BB91 /* ExtenderAudioFileConverter */,
+				D38A7BC927FFBCD000C6BB91 /* ExtendedAudioFileConverter */,
 				D38A7BDF27FFBEFB00C6BB91 /* AudioFile2Wav */,
 				D370AEAE27FC078100C6BBB2 /* Products */,
 				D38A7BD527FFBCF800C6BB91 /* Frameworks */,
@@ -114,7 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				D370AEAD27FC078100C6BBB2 /* af2wav */,
-				D38A7BC827FFBCD000C6BB91 /* libExtenderAudioFileConverter.a */,
+				D38A7BC827FFBCD000C6BB91 /* libExtendedAudioFileConverter.a */,
 				D38A7BDE27FFBEFB00C6BB91 /* AudioFile2Wav.action */,
 			);
 			name = Products;
@@ -130,7 +130,7 @@
 			path = af2wav;
 			sourceTree = "<group>";
 		};
-		D38A7BC927FFBCD000C6BB91 /* ExtenderAudioFileConverter */ = {
+		D38A7BC927FFBCD000C6BB91 /* ExtendedAudioFileConverter */ = {
 			isa = PBXGroup;
 			children = (
 				D370AEB927FC082B00C6BBB2 /* ExtendedAudioFileConverter.m */,
@@ -138,7 +138,7 @@
 				D38F9FFA27FE85B800FAE904 /* DDP.h */,
 				D38F9FFB27FE85B800FAE904 /* DDP.c */,
 			);
-			path = ExtenderAudioFileConverter;
+			path = ExtendedAudioFileConverter;
 			sourceTree = "<group>";
 		};
 		D38A7BD527FFBCF800C6BB91 /* Frameworks */ = {
@@ -194,9 +194,9 @@
 			productReference = D370AEAD27FC078100C6BBB2 /* af2wav */;
 			productType = "com.apple.product-type.tool";
 		};
-		D38A7BC727FFBCD000C6BB91 /* ExtenderAudioFileConverter */ = {
+		D38A7BC727FFBCD000C6BB91 /* ExtendedAudioFileConverter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D38A7BD027FFBCD000C6BB91 /* Build configuration list for PBXNativeTarget "ExtenderAudioFileConverter" */;
+			buildConfigurationList = D38A7BD027FFBCD000C6BB91 /* Build configuration list for PBXNativeTarget "ExtendedAudioFileConverter" */;
 			buildPhases = (
 				D38A7BC427FFBCD000C6BB91 /* Headers */,
 				D38A7BC527FFBCD000C6BB91 /* Sources */,
@@ -206,9 +206,9 @@
 			);
 			dependencies = (
 			);
-			name = ExtenderAudioFileConverter;
-			productName = ExtenderAudioFileConverter;
-			productReference = D38A7BC827FFBCD000C6BB91 /* libExtenderAudioFileConverter.a */;
+			name = ExtendedAudioFileConverter;
+			productName = ExtendedAudioFileConverter;
+			productReference = D38A7BC827FFBCD000C6BB91 /* libExtendedAudioFileConverter.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		D38A7BDD27FFBEFB00C6BB91 /* AudioFile2Wav */ = {
@@ -265,7 +265,7 @@
 			projectRoot = "";
 			targets = (
 				D370AEAC27FC078100C6BBB2 /* af2wav */,
-				D38A7BC727FFBCD000C6BB91 /* ExtenderAudioFileConverter */,
+				D38A7BC727FFBCD000C6BB91 /* ExtendedAudioFileConverter */,
 				D38A7BDD27FFBEFB00C6BB91 /* AudioFile2Wav */,
 			);
 		};
@@ -372,12 +372,12 @@
 /* Begin PBXTargetDependency section */
 		D38A7BD827FFBD3800C6BB91 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D38A7BC727FFBCD000C6BB91 /* ExtenderAudioFileConverter */;
+			target = D38A7BC727FFBCD000C6BB91 /* ExtendedAudioFileConverter */;
 			targetProxy = D38A7BD727FFBD3800C6BB91 /* PBXContainerItemProxy */;
 		};
 		D38A7BEE27FFBF0700C6BB91 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D38A7BC727FFBCD000C6BB91 /* ExtenderAudioFileConverter */;
+			target = D38A7BC727FFBCD000C6BB91 /* ExtendedAudioFileConverter */;
 			targetProxy = D38A7BED27FFBF0700C6BB91 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -640,7 +640,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D38A7BD027FFBCD000C6BB91 /* Build configuration list for PBXNativeTarget "ExtenderAudioFileConverter" */ = {
+		D38A7BD027FFBCD000C6BB91 /* Build configuration list for PBXNativeTarget "ExtendedAudioFileConverter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D38A7BCE27FFBCD000C6BB91 /* Debug */,
