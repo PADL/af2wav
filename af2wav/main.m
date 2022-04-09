@@ -87,7 +87,7 @@ int main(int argc, const char * argv[]) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (error) {
                     NSLog(@"%@", error);
-                    exit(3);
+                    exit(2);
                 } else {
                     exit(0);
                 }
