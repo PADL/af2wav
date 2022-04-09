@@ -242,9 +242,7 @@
     }
 
     if (self.preflightHandler) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.preflightHandler(sourceFormat, destinationFormat, layout);
-        });
+        self.preflightHandler(sourceFormat, destinationFormat, layout);
     }
     
     // Get the audio converter.
@@ -277,12 +275,10 @@
     
     while (true) {
         if (self.progressHandler) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                double percentComplete = round((double)sourceFrameOffset / (double)lengthInFrames * 100.0);
-                if (percentComplete != self->_lastPercentComplete)
-                    self.progressHandler(percentComplete);
-                self->_lastPercentComplete = percentComplete;
-            });
+            double percentComplete = round((double)sourceFrameOffset / (double)lengthInFrames * 100.0);
+            if (percentComplete != self->_lastPercentComplete)
+                self.progressHandler(percentComplete);
+            self->_lastPercentComplete = percentComplete;
         }
         
         /*
@@ -320,9 +316,7 @@
         ExtAudioFileDispose(sourceFile);
     
     if (self.completionHandler) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.completionHandler(nil);
-        });
+        self.completionHandler(nil);
     }
 }
 
@@ -334,9 +328,7 @@
     NSError *nsError = [NSError errorWithDomain:NSOSStatusErrorDomain code:error userInfo:@{NSLocalizedDescriptionKey : string}];
 
     if (self.completionHandler) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.completionHandler(nsError);
-        });
+        self.completionHandler(nsError);
     }
     
     return false;

@@ -61,32 +61,37 @@ int main(int argc, const char * argv[]) {
         converter.preflightHandler = ^(AudioStreamBasicDescription sourceFormat,
                                        AudioStreamBasicDescription destinationFormat,
                                        AudioChannelLayout layout) {
-            printf("Source file format:\n");
-            [ExtendedAudioFileConverter printAudioStreamBasicDescription:sourceFormat];
-            printf("Destination file format:\n");
-            [ExtendedAudioFileConverter printAudioStreamBasicDescription:destinationFormat];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                printf("Source file format:\n");
+                [ExtendedAudioFileConverter printAudioStreamBasicDescription:sourceFormat];
+                printf("Destination file format:\n");
+                [ExtendedAudioFileConverter printAudioStreamBasicDescription:destinationFormat];
+            });
         };
 
         converter.progressHandler = ^(double percentage) {
-            int val = (int)percentage;
-            int lpad = (int)((percentage / 100.0) * PBWIDTH);
-            int rpad = PBWIDTH - lpad;
-            printf("\r%3d%% [%.*s%*s]", val, lpad, PBSTR, rpad, "");
-            fflush(stdout);
-            
-            if (percentage == 100.0) {
-                printf("\n");
-            }
-            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                int val = (int)percentage;
+                int lpad = (int)((percentage / 100.0) * PBWIDTH);
+                int rpad = PBWIDTH - lpad;
+                printf("\r%3d%% [%.*s%*s]", val, lpad, PBSTR, rpad, "");
+                fflush(stdout);
+                
+                if (percentage == 100.0) {
+                    printf("\n");
+                }
+            });
         };
         
         converter.completionHandler = ^(NSError *error) {
-            if (error) {
-                NSLog(@"%@", error);
-                exit(3);
-            } else {
-                exit(0);
-            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (error) {
+                    NSLog(@"%@", error);
+                    exit(3);
+                } else {
+                    exit(0);
+                }
+            });
         };
         
         [converter convertAudioFile];
